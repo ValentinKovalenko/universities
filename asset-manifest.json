@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/universities/static/css/main.c852c78e.css",
+    "main.js": "/universities/static/js/main.3a792db7.js",
+    "static/media/istockphoto.jpg": "/universities/static/media/istockphoto.3ef8a6db6fff3329b196.jpg",
+    "index.html": "/universities/index.html",
+    "main.c852c78e.css.map": "/universities/static/css/main.c852c78e.css.map",
+    "main.3a792db7.js.map": "/universities/static/js/main.3a792db7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c852c78e.css",
+    "static/js/main.3a792db7.js"
+  ]
+}
