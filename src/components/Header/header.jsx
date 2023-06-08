@@ -1,12 +1,13 @@
 import {Link} from "react-router-dom";
+import {linkHome, linkWord, wrapHeader} from "./style";
 
 const Header = () => {
     return (
-        <div className='flex ml-10 items-center h-14'>
-            <Link className='text-white mr-3 hover:text-blue-400 focus:text-blue-400' to='/'>
+        <div className={wrapHeader}>
+            <Link className={linkHome} to='/'>
                 Home
             </Link>
-            <Link className='text-white hover:text-blue-400 focus:text-blue-400' to='/universities'>
+            <Link className={linkWord} to='/universities'>
                 Word Universities
             </Link>
         </div>

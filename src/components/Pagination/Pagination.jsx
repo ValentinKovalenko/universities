@@ -2,6 +2,15 @@ import ReactPaginate from "react-paginate";
 import {useSearchParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/20/solid";
+import {
+    activeLinkClassName,
+    breakClassName,
+    pageLinkClassName,
+    styleChevronIcon,
+    styleIcon,
+    stylePaginate,
+    wrapPaginate
+} from "./style";
 
 const Pagination = ({totalCount}) => {
     let [searchParams, setSearchParams] = useSearchParams();
@@ -20,25 +29,25 @@ const Pagination = ({totalCount}) => {
  },[pages, setSearchParams])
 
     return (
-        <div className='flex justify-center'>
+        <div className={wrapPaginate}>
             <ReactPaginate
                 breakLabel="..."
                 onPageChange={handlePageClick}
                 marginPagesDisplayed={3}
                 pageRangeDisplayed={3}
                 pageCount={pageCount}
-                className="relative flex rounded-md text-gray py-4"
-                pageLinkClassName="border-gray-300 relative inline-flex items-center h-[38px] px-4 py-2 border text-base font-medium hover:bg-gray-100 focus:bg-gray-100"
-                activeLinkClassName="bg-secondary-100 border-secondary-400 text-secondary border-secondary"
-                breakClassName="border-gray-300 relative inline-flex items-center px-4 border text-base font-medium"
+                className={stylePaginate}
+                pageLinkClassName={pageLinkClassName}
+                activeLinkClassName={activeLinkClassName}
+                breakClassName={breakClassName}
                 nextLabel={
-                    <span className='relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-base font-medium hover:bg-gray-100'>
-          <ChevronRightIcon className="h-5 w-5" />
+                    <span className={styleIcon}>
+          <ChevronRightIcon className={styleChevronIcon} />
         </span>
                 }
                 previousLabel={
-                    <span className='relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-base font-medium hover:bg-gray-100'>
-          <ChevronLeftIcon className="h-5 w-5" />
+                    <span className={styleIcon}>
+          <ChevronLeftIcon className={styleChevronIcon} />
         </span>
                 }
                 renderOnZeroPageCount={null}

@@ -1,16 +1,17 @@
 import { motion } from 'framer-motion';
 import {homeAnimate} from "../../constans/animation";
+import {textHome, wrapHome} from "./style";
 
 
 
 const Home = () => {
     return (
-        <div className='flex justify-center items-center h-screen w-full' >
+        <div className={wrapHome} >
         <motion.p
             initial="initial"
             animate="animate"
             variants={homeAnimate}
-            className='shadow-2xl shadow-white text-7xl text-white italic'>
+            className={textHome}>
             World universities portal
         </motion.p>
         </div>

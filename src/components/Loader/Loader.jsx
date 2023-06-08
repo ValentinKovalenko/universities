@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import {textContainer} from "../../constans/animation";
+import {animationLoader, textLoader} from "./style";
 
 const Loader = ({isVisible}) => {
 
@@ -7,12 +8,12 @@ const Loader = ({isVisible}) => {
         <>
             {isVisible && (
                 <motion.div
-                    className="w-20 h-20 fixed inset-0 m-auto z-30"
+                    className={animationLoader}
                     initial="initial"
                     animate="animate"
                     variants={textContainer}
                 >
-                    <span className='text-white text-3xl'>Loading...</span>
+                    <span className={textLoader}>Loading...</span>
                 </motion.div>
             )}
         </>

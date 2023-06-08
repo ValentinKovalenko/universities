@@ -4,6 +4,7 @@ import Pagination from "../../components/Pagination";
 import {useEffect, useState} from "react";
 import {useDebounce} from "react-use";
 import startCase from 'lodash/startCase';
+import {styleInputSearch, styleLink, styleText, wrapInput} from "./style";
 
 const WordUniversities = () => {
     const location = useLocation();
@@ -46,19 +47,24 @@ const WordUniversities = () => {
 
     return (
         <div className='px-8'>
-            <div className='flex justify-center mb-2'>
-                <input className='w-1/3 h-12 rounded-3xl px-7 border-none  focus:outline-blue-400' type='text' onChange={(e)=>{setInputValue(e.target.value)}} placeholder='Enter the country'/>
+            <div className={wrapInput}>
+                <input
+                    className={styleInputSearch}
+                    type='text'
+                    onChange={(e)=>{setInputValue(e.target.value)}}
+                    placeholder='Enter the country'
+                />
             </div>
             {country?.length ? country.map((item) =>
                 <div key={item.code} className='flex justify-center'>
                     <Link
-                        className='bg-gray-400 m-2 px-8 flex justify-between items-center h-14 w-2/3 text-white rounded-lg focus:bg-gray-500 hover:bg-gray-500 hover:text-blue-400 bg-opacity-50'
+                        className={styleLink}
                         to={`/universities/${item.name}`}>
                         <p className=''>{item.name}</p>
                         <p>{item.code}</p>
                     </Link>
                 </div>
-            ) : <p className='flex justify-center mb-3 text-xl text-white'>No countries found...</p>}
+            ) : <p className={styleText}>No countries found...</p>}
             <Pagination totalCount={totalCount}/>
         </div>
     );
